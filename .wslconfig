@@ -1,0 +1,5 @@
+# For Docker Desktop on Windows put this in you home folder (C: \User\<your-initials>).
+# Adjust limits as needed. Airflow requires a lot of juice...
+[wsl2]
+memory=6GB   # Limits VM memory in WSL 2 up to 6GB
+processors=4 # Makes the WSL 2 VM use four virtual processors
