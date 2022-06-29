@@ -12,7 +12,7 @@ This repository contains a full configuration of Airflow using docker-compose fo
 ## Before you begin
 - Install Docker and Docker-Compose (see [this guide](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html#before-you-begin))
 - On Windows you will want to use [Docker Desktop](https://docs.docker.com/desktop/windows/install/) with the [WSL 2 based engine](https://docs.docker.com/desktop/windows/wsl/). When installed and enabled copy `.wslconfig` to your home folder.
-- Get access an AWS Account with permissions to S3 and AWS Secrets Manager (an account has been set up for Airflow - see LastPass Vault for credentials)
+- Get access an AWS Account with permissions to S3 and AWS Secrets Manager
 
 ## Installation
 Put your AWS credentials in `airflow/aws_credentials` (see the `aws_credentials.example` file for an example).
@@ -100,7 +100,7 @@ You will want to log in to troubleshoot the app (e.g. for health checks `docker-
 > **Note**: On the server you might need root permissions for some commands (here you need to type `sudo` before the command).
 
 ### Automatic pulls
-Changes that are pushed to the `main` branch will automatically be pulled the `/home/datauser/airflow-docker` at `dkraapp04`. This is currently set up with a simple cron job. You can verify that changes are pulled by reading `airflow_docker/pull-log.txt`. This is how dags are deployed. 
+Changes that are pushed to the `main` branch will automatically be pulled to `/home/datauser/airflow-docker` at the linux server. This is currently set up with a cron job. You can verify that changes are pulled by reading `airflow_docker/pull-log.txt`. This is how dags are deployed. 
 
 > **Note**: Updates to Dockerfile or docker-compose.yml that are pushed to `main` branch do not take effect in production, before you restart the app on the server as explained in the *Changing configurations* section.
 
